@@ -75,8 +75,8 @@ app.post("/repositories/:id/like", (request, response) => {
     repository.id === id);
 
   if (findRepositoryIndex === -1) {
-    return response.status(404).json({error: 'Repository does not exists.'});
-  };
+    return response.status(404).json({ error: 'Repository does not exists.'});
+  }
   repositories[findRepositoryIndex].likes+= 1;
 
   return response.json(repositories[findRepositoryIndex]);
